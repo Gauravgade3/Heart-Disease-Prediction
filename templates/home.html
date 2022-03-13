@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+         crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>
+        Heart Disease Predictor
+    </h1>
+
+    <h2>
+        Your Personal Doctor!
+    </h2>
+
+
+
+
+    <div class="container">
+       <form action="\predict" method="post" class="my-3">
+            <div class="form-row">
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card" >
+                        <div class="card-body">
+                            <h5 class="card-title">Age</h5>
+                            <input type="text" name="age" class="form-control" placeholder="Enter Integer Value"
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card1" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Gender</h5>
+                            <select name="Sex" id="Sex" style="width: fit-content;">
+                                <option value="None">Select</option>
+                                <option value=1>M</option>
+                                <option value=2>F</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card2" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Chest Pain Type</h5>
+                            <select name="ChestPainType" id="ChestPainType" style="width: fit-content;">
+                                <option value="None">Select</option>
+                                <option value=1>ASY</option>
+                                <option value=2>NAP</option>
+                                <option value=3>ATA</option>
+                                <option value=4>TA</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card3" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Resting BP</h5>
+                            <input type="text" name="RestingBP" class="form-control" placeholder="Enter your BP "
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card4" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Cholesterol</h5>
+                            <input type="text" name="Cholesterol" class="form-control" placeholder="Enter your Cholesterol"
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card5" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Fasting Blood Sugar</h5>
+                            <select name="FastingBS" id="FastingBS" style="width: fit-content;">
+                                <option value="None">Select</option>
+                                <option value=1>0</option>
+                                <option value=2>1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card6" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Resting ECG</h5>
+                            <select name="RestingECG" id="RestingECG" style="width: fit-content;">
+                                <option value="None">Select</option>
+                                <option value=1>Normal</option>
+                                <option value=2>LVH</option>
+                                <option value=3>ST</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card7" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Max. Heart Rate</h5>
+                            <input type="text" name="MaxHR" class="form-control" placeholder="Enter your Heart Rate"
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card8" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Exercise Angina</h5>
+                            <select name="ExerciseAngina" id="ExerciseAngina" style="width: fit-content;">
+                                <option value="None">Select</option>
+                                <option value=1>Y</option>
+                                <option value=2>N</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card9" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Old Peak</h5>
+                            <input type="text" name="Oldpeak" class="form-control" placeholder="Enter Old Peak (in Decimal Value)"
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-transparent my-3 mx-3" id="card10" style="width: 30rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">ST Slope</h5>
+                            <select name="ST_Slope" id="ST_Slope" style="width: fit-content;">
+                                <option value="None">Select</option>
+                                <option value=1>Flat</option>
+                                <option value=2>Up</option>
+                                <option value=3>Down</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="col my-3">
+                <button type="Submit" class="btn btn-primary">Predict</button>
+            </div>
+
+       </form>
+        <br>
+        <br>
+    </div>
+
+
+
+
+
+
+
+    <footer>
+        <a href="https://www.linkedin.com/in/gaurav-gade-bba1111b3/" target="_blank"><i class="fa fa-linkedin" style="color: darkblue;"></i></a>
+        <a href="https://github.com/Gauravgade3" target="_blank"><i class="fa fa-github" style="color: black;"></i></a>
+        <br>
+        <br>
+        <small class="copyright text-muted">Copyright@: Gaurav Gade - 2022</small>
+    </footer>
+
+
+
+
+
+<style>
+
+body {
+    background-image: url('https://media.istockphoto.com/photos/doctor-of-internal-medicine-and-cardiologist-holding-in-his-hands-and-picture-id1141643124?k=20&m=1141643124&s=612x612&w=0&h=D0E0AiXIO1Dm_JuIAKiNDh6NUE5cDg0uACVcbupCCkE=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 90px;
+    color: red;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px green;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: orange;
+    font-weight: normal;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    margin-left: -160px;
+}
+
+
+
+
+
+
+
+</style>
+</body>
+</html>
+
+
+
